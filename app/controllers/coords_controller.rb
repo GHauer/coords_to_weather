@@ -7,6 +7,14 @@ class CoordsController < ApplicationController
     @longitude = -87.67721
     your_api_key = "4966eeb240591c7cbca31d5b97ab647e"
 
+    if @latitude == nil
+        @latitude =42.0538387
+    end
+
+    if @longitude == nil
+        @longitude =-87.67721
+    end
+
     # Your code goes here.
     url = "https://api.forecast.io/forecast/"+your_api_key+"/"+@latitude+","+@longitude
     raw_data = open(url).read
